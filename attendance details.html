@@ -5,48 +5,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Attendance Dashboard | Facial Attendance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header>
-    <h1>Attendance Dashboard</h1>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="home.html">Dashboard</a></li>
-        <li><a href="student-dashboard.html">Progress</a></li>
-        <li><a href="attendance-dashboard.html" aria-current="page">Attendance</a></li>
-        <li><a href="logout.html">Logout</a></li>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+  <header class="bg-teal-800 text-white py-6 shadow-md">
+    <h1 class="text-center text-3xl font-extrabold">Attendance Dashboard</h1>
+    <nav aria-label="Main navigation" class="mt-4">
+      <ul class="flex justify-center gap-8 text-white text-lg">
+        <li><a href="home.html" class="hover:text-teal-300 transition">Dashboard</a></li>
+        <li><a href="student-dashboard.html" class="hover:text-teal-300 transition">Progress</a></li>
+        <li><a href="attendance-dashboard.html" aria-current="page" class="underline">Attendance</a></li>
+        <li><a href="logout.html" class="hover:text-teal-300 transition">Logout</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section aria-labelledby="attendance-summary-title">
-      <h2 id="attendance-summary-title">Your Attendance Overview</h2>
-      <p>Click on a course to see detailed attendance graphs and data.</p>
+  <main class="container mx-auto px-6 py-8 flex-grow">
+    <section aria-labelledby="attendance-summary-title" class="max-w-4xl mx-auto">
+      <h2 id="attendance-summary-title" class="text-2xl font-semibold mb-4 text-teal-800">Your Attendance Overview</h2>
+      <p class="mb-6 text-gray-700">Click on a course to see detailed attendance graphs and data.</p>
 
-      <table border="1" aria-describedby="attendance-desc" role="grid" cellpadding="8" cellspacing="0" style="width: 100%; border-collapse: collapse;">
-        <caption id="attendance-desc">Summary of your attendance across all registered courses</caption>
-        <thead>
+      <table class="w-full border border-gray-300 rounded-lg overflow-hidden shadow-lg" aria-describedby="attendance-desc" role="grid" cellpadding="8" cellspacing="0">
+        <caption id="attendance-desc" class="sr-only">Summary of your attendance across all registered courses</caption>
+        <thead class="bg-teal-700 text-white">
           <tr>
-            <th scope="col">Course</th>
-            <th scope="col">Attendance Percentage</th>
-            <th scope="col">Status</th>
-            <th scope="col">Details</th>
+            <th scope="col" class="text-left px-4 py-3">Course</th>
+            <th scope="col" class="text-left px-4 py-3">Attendance Percentage</th>
+            <th scope="col" class="text-left px-4 py-3">Status</th>
+            <th scope="col" class="text-left px-4 py-3">Details</th>
           </tr>
         </thead>
-        <tbody>
-          <tr tabindex="0">
-            <td>Mathematics 101</td>
-            <td>95%</td>
-            <td>Excellent</td>
-            <td><a href="attendance-details.html?course=math101" aria-label="View detailed attendance for Mathematics 101">View Details</a></td>
+        <tbody class="bg-white">
+          <tr tabindex="0" class="border-b border-gray-200 hover:bg-teal-50 focus:bg-teal-100 cursor-pointer">
+            <td class="px-4 py-3">Mathematics 101</td>
+            <td class="px-4 py-3">95%</td>
+            <td class="px-4 py-3">Excellent</td>
+            <td class="px-4 py-3">
+              <a href="attendance-details.html?course=math101" aria-label="View detailed attendance for Mathematics 101" class="text-teal-600 hover:underline">
+                View Details
+              </a>
+            </td>
           </tr>
-          <tr tabindex="0">
-            <td>History 101</td>
-            <td>88%</td>
-            <td>Good</td>
-            <td><a href="attendance-details.html?course=history101" aria-label="View detailed attendance for History 101">View Details</a></td>
+          <tr tabindex="0" class="border-b border-gray-200 hover:bg-teal-50 focus:bg-teal-100 cursor-pointer">
+            <td class="px-4 py-3">History 101</td>
+            <td class="px-4 py-3">88%</td>
+            <td class="px-4 py-3">Good</td>
+            <td class="px-4 py-3">
+              <a href="attendance-details.html?course=history101" aria-label="View detailed attendance for History 101" class="text-teal-600 hover:underline">
+                View Details
+              </a>
+            </td>
           </tr>
           <!-- Additional courses dynamically populated -->
         </tbody>
@@ -54,16 +64,19 @@
     </section>
 
     <!-- Placeholder for graphical attendance data -->
-    <section aria-labelledby="graph-placeholder-title" style="margin-top: 2rem;">
-      <h2 id="graph-placeholder-title">Attendance Graphs</h2>
+    <section aria-labelledby="graph-placeholder-title" class="max-w-4xl mx-auto mt-12 p-6 bg-white rounded-lg shadow-lg">
+      <h2 id="graph-placeholder-title" class="text-xl font-semibold mb-2 text-teal-800">Attendance Graphs</h2>
 
       <figure>
-        <figcaption>Attendance graph for selected course will appear here.</figcaption>
+        <figcaption class="mb-4 text-gray-600 italic">Attendance graph for selected course will appear here.</figcaption>
         <!-- Embed SVG or Canvas for charts here -->
-        <div id="attendance-chart-placeholder" role="img" aria-label="Graphical representation of attendance"></div>
+        <div id="attendance-chart-placeholder" role="img" aria-label="Graphical representation of attendance" class="h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+          Chart will render here
+        </div>
       </figure>
     </section>
   </main>
+
 </body>
 
 </html>

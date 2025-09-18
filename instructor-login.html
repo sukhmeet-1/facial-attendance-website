@@ -2,40 +2,51 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Instructor Login | Facial Attendance</title>
-  <link rel="stylesheet" href="gov-style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header>
-    <h1>Facial Attendance System</h1>
+<body class="bg-gray-50 min-h-screen flex flex-col font-sans text-gray-800">
+
+  <header class="bg-teal-800 text-white py-6 shadow-md">
+    <h1 class="text-center text-3xl font-extrabold tracking-tight">Facial Attendance System</h1>
   </header>
 
-  <main>
-    <section class="login-section">
-      <h2>Instructor Login</h2>
-      <form action="#" method="post" class="login-form">
-        <div class="form-group">
-          <label for="instructor-id">Instructor ID</label>
-          <input type="text" id="instructor-id" name="instructor-id" required>
+  <main class="flex-grow flex items-center justify-center px-4">
+    <section class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+      <h2 class="text-2xl font-semibold mb-6 text-teal-800 text-center">Instructor Login</h2>
+
+      <form action="#" method="post" class="space-y-6">
+        <div>
+          <label for="instructor-id" class="block mb-2 font-medium">Instructor ID</label>
+          <input type="text" id="instructor-id" name="instructor-id" required
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600" />
         </div>
 
-        <div class="form-group">
-          <label for="instructor-password">Password</label>
-          <input type="password" id="instructor-password" name="instructor-password" required>
+        <div>
+          <label for="instructor-password" class="block mb-2 font-medium">Password</label>
+          <input type="password" id="instructor-password" name="instructor-password" required
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600" />
         </div>
 
-        <button type="submit">Login</button>
+        <button type="submit"
+          class="w-full bg-teal-700 text-white py-3 rounded-lg font-semibold hover:bg-teal-900 transition-colors">
+          Login
+        </button>
       </form>
-      <p><a href="index.html">← Back to Home</a></p>
+
+      <p class="mt-6 text-center text-gray-600">
+        <a href="index.html" class="hover:text-teal-700 underline">← Back to Home</a>
+      </p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Facial Attendance Prototype</p>
+  <footer class="bg-teal-800 text-white py-4 text-center text-sm">
+    &copy; 2025 Facial Attendance Prototype
   </footer>
+
 </body>
 
 </html>

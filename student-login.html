@@ -2,42 +2,50 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Student Login | Facial Attendance</title>
-  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header>
-    <h1>Facial Attendance System</h1>
+<body class="bg-gray-50 min-h-screen flex flex-col font-sans text-gray-800">
+
+  <header class="bg-teal-800 text-white py-6 shadow-md">
+    <h1 class="text-center text-3xl font-extrabold tracking-tight">Facial Attendance System</h1>
   </header>
 
-  <main>
-    <section class="login-section">
-      <h2>Student Login</h2>
-      <form action="#" method="post" class="login-form">
-        <div class="form-group">
-          <label for="student-id">Student ID</label>
-          <input type="text" id="student-id" name="student-id" required>
+  <main class="flex-grow flex items-center justify-center px-4">
+    <section class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+      <h2 class="text-2xl font-semibold mb-6 text-teal-800 text-center">Student Login</h2>
+      <form action="#" method="post" class="space-y-6">
+        <div>
+          <label for="student-id" class="block mb-2 font-medium">Student ID</label>
+          <input type="text" id="student-id" name="student-id" required
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600" />
         </div>
-
-        <div class="form-group">
-          <label for="student-password">Password</label>
-          <input type="password" id="student-password" name="student-password" required>
+        <div>
+          <label for="student-password" class="block mb-2 font-medium">Password</label>
+          <input type="password" id="student-password" name="student-password" required
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600" />
         </div>
-
-        <button type="submit">Login</button>
+        <button type="submit"
+          class="w-full bg-teal-700 text-white py-3 rounded-lg font-semibold hover:bg-teal-900 transition-colors">
+          Login
+        </button>
       </form>
-      
-      <p>Don't have an account? <a href="student-register.html">Register here</a></p>
-      <p><a href="home.html">← Back to Home</a></p>
+      <p class="mt-6 text-center text-gray-600">
+        Don't have an account? <a href="student-register.html" class="text-teal-700 hover:underline">Register here</a>
+      </p>
+      <p class="mt-2 text-center">
+        <a href="home.html" class="text-teal-700 hover:underline">← Back to Home</a>
+      </p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Facial Attendance Prototype</p>
+  <footer class="bg-teal-800 text-white py-4 text-center text-sm mt-12">
+    &copy; 2025 Facial Attendance Prototype
   </footer>
+
 </body>
 
 </html>

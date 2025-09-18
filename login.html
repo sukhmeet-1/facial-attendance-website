@@ -4,26 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login | Facial Attendance</title>
-  <link rel="stylesheet" href="gov-style.css" />
+  <title>Facial Attendance - Sample Page</title>
+  <link href="styles.css" rel="stylesheet" />
 </head>
 
-<body>
-  <header>
-    <h1>Facial Attendance System</h1>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800 flex flex-col">
+
+  <header class="bg-teal-800 text-white py-6 shadow-md text-center font-extrabold text-3xl tracking-tight">
+    Facial Attendance System
   </header>
 
-  <main class="login-main">
-    <h2>Select Login Type</h2>
-    <div class="login-buttons">
-      <a href="student-login.html" class="gov-btn">Student Login</a>
-      <a href="instructor-login.html" class="gov-btn">Instructor Login</a>
-    </div>
+  <nav class="bg-teal-700 text-white py-3">
+    <ul class="container mx-auto flex justify-center gap-8 text-lg">
+      <li><a href="home.html" class="nav-link hover:underline">Home</a></li>
+      <li><a href="student-dashboard.html" class="nav-link hover:underline">Dashboard</a></li>
+      <li><a href="attendance-details.html" class="nav-link hover:underline">Attendance</a></li>
+      <li><a href="logout.html" class="nav-link hover:underline">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="container mx-auto p-6 flex-grow max-w-4xl">
+    <section class="card bg-white rounded-lg shadow-lg p-8">
+      <h1 class="text-3xl font-bold mb-4">Welcome to the Facial Attendance System</h1>
+      <p class="mb-6 text-gray-700">Please use the navigation menu above to proceed with your tasks.</p>
+      <button class="btn bg-teal-700 hover:bg-teal-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+        Get Started
+      </button>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Facial Attendance Prototype</p>
+  <footer class="bg-teal-800 text-white py-4 text-center text-sm mt-12">
+    &copy; 2025 Facial Attendance Prototype
   </footer>
+
 </body>
 
 </html>

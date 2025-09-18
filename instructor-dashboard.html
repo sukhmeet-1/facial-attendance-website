@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instructor Dashboard | Take Attendance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800 flex flex-col">
+
+  <header class="bg-teal-800 text-white shadow-md py-5 px-6 flex items-center justify-between">
+    <h1 class="text-3xl font-extrabold">Instructor Dashboard</h1>
+    <nav class="space-x-6 text-white text-lg">
+      <a href="admin.html" aria-current="page" class="underline">Dashboard</a>
+      <a href="attendance-details.html" class="hover:underline">Attendance</a>
+      <a href="logout.html" class="hover:underline">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container mx-auto p-6 flex-grow max-w-5xl">
+
+    <section class="bg-white rounded-lg shadow-lg p-6 mt-8">
+      <h2 class="text-2xl font-bold mb-4 text-teal-800">Upload Classroom Photo to Mark Attendance</h2>
+      <form id="uploadForm" enctype="multipart/form-data" class="flex flex-col gap-4">
+        <input type="file" id="photoInput" name="attendance_photo" accept="image/*" required
+          class="form-input px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-600" />
+        <button type="submit"
+          class="self-start bg-teal-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-900 transition">
+          Upload & Take Attendance
+        </button>
+      </form>
+
+      <div id="previewContainer" class="mt-6 hidden flex flex-col items-center">
+        <h3 class="text-xl font-semibold mb-2 text-teal-700">Uploaded Photo Preview</h3>
+        <img id="previewImage" alt="Uploaded classroom photo preview" class="max-w-full rounded-lg shadow" />
+      </div>
+
+      <div id="attendanceResults" class="mt-8 hidden">
+        <h3 class="text-xl font-semibold mb-4 text-teal-700">Recognized Students</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-2" id="recognizedList">
+          <!-- Dynamically populated with recognized students -->
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const photoInput = document.getElementById('photoInput');
+    const previewContainer = document.getElementById('previewContainer');
+    const previewImage = document.getElementById('previewImage');
+    const attendanceResults = document.getElementById('attendanceResults');
+    const recognizedList = document.getElementById('recognizedList');
+    const uploadForm = document.getElementById('uploadForm');
+
+    photoInput.addEventListener('change', () => {
+      const file = photoInput.files[0];
+      if (file) {
+        previewImage.src = URL.createObjectURL(file);
+        previewContainer.classList.remove('hidden');
+        attendanceResults.classList.add('hidden');
+      } else {
+        previewContainer.classList.add('hidden');
+      }
+    });
+
+    uploadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Simulate recognition result for demo
+      const recognizedStudents = ['John Doe', 'Jane Smith', 'Alice Johnson'];
+      recognizedList.innerHTML = '';
+      recognizedStudents.forEach(name => {
+        const li = document.createElement('li');
+        li.textContent = name;
+        recognizedList.appendChild(li);
+      });
+      attendanceResults.classList.remove('hidden');
+      alert('Face recognition and attendance marking simulated.');
+      // In real app, send file to backend API and process response
+    });
+  </script>
+
+</body>
+
+</html>

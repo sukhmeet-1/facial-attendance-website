@@ -5,90 +5,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Student Dashboard | Facial Attendance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header>
-    <h1>Facial Attendance System</h1>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="student-dashboard.html" aria-current="page">Dashboard</a></li>
-        <li><a href="attendance-details.html">Attendance</a></li>
-        <li><a href="logout.html">Logout</a></li>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800 flex flex-col">
+
+  <header class="bg-teal-800 py-6 shadow-md text-white text-center font-extrabold text-3xl">
+    Facial Attendance System
+    <nav class="mt-3">
+      <ul class="flex justify-center space-x-8 text-lg">
+        <li><a href="home.html" class="hover:text-teal-300 transition">Home</a></li>
+        <li><a href="student-dashboard.html" aria-current="page" class="underline">Dashboard</a></li>
+        <li><a href="attendance-details.html" class="hover:text-teal-300 transition">Attendance</a></li>
+        <li><a href="logout.html" class="hover:text-teal-300 transition">Logout</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main class="container mx-auto p-6 flex-grow max-w-4xl space-y-12">
+
     <!-- Facial Samples Upload Section -->
-    <section aria-labelledby="upload-samples-title">
-      <h2 id="upload-samples-title">Upload Facial Image Samples</h2>
-      <p>Upload up to 5 clear facial images for accurate recognition during attendance.</p>
-      <form action="/upload-samples" method="POST" enctype="multipart/form-data" aria-describedby="upload-instructions">
-        <div id="upload-instructions">
+    <section aria-labelledby="upload-samples-title" class="bg-white rounded-lg shadow p-6">
+      <h2 id="upload-samples-title" class="text-2xl font-bold text-teal-800 mb-4">Upload Facial Image Samples</h2>
+      <p class="mb-4 text-gray-700">Upload up to 5 clear facial images for accurate recognition during attendance.</p>
+      <form action="/upload-samples" method="POST" enctype="multipart/form-data" aria-describedby="upload-instructions" class="space-y-4">
+        <div id="upload-instructions" class="italic text-sm text-gray-500 mb-2">
           Acceptable formats: JPG, PNG. Recommended resolution: Minimum 300x300 pixels.
         </div>
         <div>
-          <label for="image1">Image 1:</label>
-          <input id="image1" type="file" name="image1" accept="image/jpeg, image/png" required />
+          <label for="image1" class="block mb-1 font-medium">Image 1:</label>
+          <input id="image1" type="file" name="image1" accept="image/jpeg, image/png" required class="form-input w-full border border-gray-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label for="image2">Image 2:</label>
-          <input id="image2" type="file" name="image2" accept="image/jpeg, image/png" required />
+          <label for="image2" class="block mb-1 font-medium">Image 2:</label>
+          <input id="image2" type="file" name="image2" accept="image/jpeg, image/png" required class="form-input w-full border border-gray-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label for="image3">Image 3:</label>
-          <input id="image3" type="file" name="image3" accept="image/jpeg, image/png" required />
+          <label for="image3" class="block mb-1 font-medium">Image 3:</label>
+          <input id="image3" type="file" name="image3" accept="image/jpeg, image/png" required class="form-input w-full border border-gray-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label for="image4">Image 4:</label>
-          <input id="image4" type="file" name="image4" accept="image/jpeg, image/png" required />
+          <label for="image4" class="block mb-1 font-medium">Image 4:</label>
+          <input id="image4" type="file" name="image4" accept="image/jpeg, image/png" required class="form-input w-full border border-gray-300 rounded px-3 py-2" />
         </div>
         <div>
-          <label for="image5">Image 5:</label>
-          <input id="image5" type="file" name="image5" accept="image/jpeg, image/png" required />
+          <label for="image5" class="block mb-1 font-medium">Image 5:</label>
+          <input id="image5" type="file" name="image5" accept="image/jpeg, image/png" required class="form-input w-full border border-gray-300 rounded px-3 py-2" />
         </div>
-        <button type="submit">Upload Samples</button>
+        <button type="submit" class="bg-teal-700 text-white px-6 py-2 rounded hover:bg-teal-900 transition">Upload Samples</button>
       </form>
     </section>
 
     <!-- Course Registration Section -->
-    <section aria-labelledby="course-registration-title">
-      <h2 id="course-registration-title">Course Registration</h2>
-      <form action="/register-course" method="POST">
-        <label for="course-select">Select Course:</label>
-        <select id="course-select" name="course_id" required>
+    <section aria-labelledby="course-registration-title" class="bg-white rounded-lg shadow p-6">
+      <h2 id="course-registration-title" class="text-2xl font-bold text-teal-800 mb-4">Course Registration</h2>
+      <form action="/register-course" method="POST" class="flex items-center space-x-4 mb-6">
+        <label for="course-select" class="font-medium">Select Course:</label>
+        <select id="course-select" name="course_id" required class="form-select border border-gray-300 rounded px-3 py-2">
           <option value="" disabled selected>Choose a course</option>
           <option value="1">Mathematics 101</option>
           <option value="2">Physics 101</option>
           <option value="3">History 101</option>
         </select>
-        <button type="submit">Register</button>
+        <button type="submit" class="bg-teal-700 text-white px-5 py-2 rounded hover:bg-teal-900 transition">Register</button>
       </form>
-      <h3 id="registered-courses-title">Registered Courses</h3>
-      <ul>
+      <h3 id="registered-courses-title" class="text-xl font-semibold text-gray-800 mb-3">Registered Courses</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
         <li>Mathematics 101</li>
         <li>History 101</li>
       </ul>
     </section>
 
     <!-- Attendance Progress Section -->
-    <section aria-labelledby="attendance-progress-title">
-      <h2 id="attendance-progress-title">Attendance Progress</h2>
+    <section aria-labelledby="attendance-progress-title" class="bg-white rounded-lg shadow p-6 space-y-6">
+      <h2 id="attendance-progress-title" class="text-2xl font-bold text-teal-800">Attendance Progress</h2>
 
       <div>
-        <h3>Mathematics 101</h3>
+        <h3 class="text-lg font-semibold">Mathematics 101</h3>
         <p>Progress: <strong>95%</strong> (19 of 20 lectures attended)</p>
-        <div role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-          <!-- Graphical bar added via CSS/JS later -->
+        <div class="w-full bg-gray-200 rounded h-5 mt-1 overflow-hidden">
+          <div class="bg-teal-700 h-5 rounded transition-all" style="width: 95%;"></div>
         </div>
         <p>Status: Excellent</p>
       </div>
 
       <div>
-        <h3>History 101</h3>
+        <h3 class="text-lg font-semibold">History 101</h3>
         <p>Progress: <strong>88%</strong> (22 of 25 lectures attended)</p>
-        <div role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
-          <!-- Graphical bar added via CSS/JS later -->
-        </
+        <div class="w-full bg-gray-200 rounded h-5 mt-1 overflow-hidden">
+          <div class="bg-teal-700 h-5 rounded transition-all" style="width: 88%;"></div>
+        </div>
+        <p>Status: Good</p>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
+

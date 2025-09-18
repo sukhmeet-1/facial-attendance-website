@@ -5,31 +5,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facial Recognition Attendance System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <main>
-    <header>
-      <h1>Facial Recognition Attendance System</h1>
-      <p>
-        Our innovative attendance system allows educators to take a single photograph of the classroom, recognizing all students' faces instantly to mark attendance automatically. This technology ensures precise, proxy-proof attendance while significantly reducing manual administrative workload.
-      </p>
-    </header>
+<body class="bg-gray-50 min-h-screen font-sans text-gray-800 flex flex-col">
+
+  <header class="bg-teal-800 text-white shadow py-6 mb-8">
+    <h1 class="text-center text-4xl font-extrabold tracking-tight">Facial Recognition Attendance System</h1>
+  </header>
+
+  <main class="container mx-auto px-6 flex-grow max-w-4xl space-y-10">
 
     <section>
-      <h2>Get Started</h2>
+      <p class="text-lg leading-relaxed max-w-prose mx-auto">
+        Our innovative attendance system allows educators to take a single photograph of the classroom, recognizing all students' faces instantly to mark attendance automatically. This technology ensures precise, proxy-proof attendance while significantly reducing manual administrative workload.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 text-teal-800 text-center">Get Started</h2>
       <nav>
-        <ul>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="contact.html">Contact Support</a></li>
+        <ul class="flex justify-center gap-8">
+          <li><a href="login.html" class="btn px-6 py-3 rounded-lg bg-teal-700 text-white font-semibold hover:bg-teal-800 transition">Login</a></li>
+          <li><a href="register.html" class="btn px-6 py-3 rounded-lg bg-teal-700 text-white font-semibold hover:bg-teal-800 transition">Register</a></li>
+          <li><a href="contact.html" class="btn px-6 py-3 rounded-lg bg-teal-700 text-white font-semibold hover:bg-teal-800 transition">Contact Support</a></li>
         </ul>
       </nav>
     </section>
 
     <section>
-      <h2>Why Choose Our System?</h2>
-      <ul>
+      <h2 class="text-2xl font-semibold mb-4 text-teal-800 text-center">Why Choose Our System?</h2>
+      <ul class="list-disc max-w-prose mx-auto space-y-3 text-gray-700 text-lg leading-relaxed">
         <li>Capture attendance through a single group photo using advanced facial recognition.</li>
         <li>Eliminate inaccurate proxy attendance with automated identification.</li>
         <li>Immediate attendance marking and reporting for educators.</li>
@@ -37,7 +43,13 @@
         <li>Clear and separate interfaces tailored for students and instructors.</li>
       </ul>
     </section>
+
   </main>
+
+  <footer class="bg-teal-800 text-white py-4 text-center text-sm mt-12">
+    &copy; 2025 Facial Attendance Prototype
+  </footer>
+
 </body>
 
 </html>
