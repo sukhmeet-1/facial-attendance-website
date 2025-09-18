@@ -5,35 +5,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facial Attendance - Sample Page</title>
-  <link href="styles.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-50 min-h-screen font-sans text-gray-800 flex flex-col">
 
-  <header class="bg-teal-800 text-white py-6 shadow-md text-center font-extrabold text-3xl tracking-tight">
+  <header class="bg-teal-800 text-white py-8 shadow-md text-center font-extrabold text-4xl tracking-tight">
     Facial Attendance System
   </header>
 
-  <nav class="bg-teal-700 text-white py-3">
-    <ul class="container mx-auto flex justify-center gap-8 text-lg">
-      <li><a href="home.html" class="nav-link hover:underline">Home</a></li>
-      <li><a href="student-dashboard.html" class="nav-link hover:underline">Dashboard</a></li>
-      <li><a href="attendance-details.html" class="nav-link hover:underline">Attendance</a></li>
-      <li><a href="logout.html" class="nav-link hover:underline">Logout</a></li>
+  <nav class="bg-teal-700 text-white py-4">
+    <ul class="container mx-auto flex justify-center gap-10 text-lg font-semibold">
+      <li><a href="home.html" class="hover:underline focus:outline-none focus:underline">Home</a></li>
+      <li><a href="student-dashboard.html" class="hover:underline focus:outline-none focus:underline">Dashboard</a></li>
+      <li><a href="attendance-details.html" class="hover:underline focus:outline-none focus:underline">Attendance</a></li>
+      <li><a href="logout.html" class="hover:underline focus:outline-none focus:underline">Logout</a></li>
     </ul>
   </nav>
 
-  <main class="container mx-auto p-6 flex-grow max-w-4xl">
-    <section class="card bg-white rounded-lg shadow-lg p-8">
-      <h1 class="text-3xl font-bold mb-4">Welcome to the Facial Attendance System</h1>
-      <p class="mb-6 text-gray-700">Please use the navigation menu above to proceed with your tasks.</p>
-      <button class="btn bg-teal-700 hover:bg-teal-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+  <main class="container mx-auto max-w-3xl p-8 flex-grow flex flex-col items-center justify-center">
+    <section class="bg-white rounded-2xl shadow-lg p-12 w-full text-center">
+      <h1 class="text-4xl font-bold mb-6">Welcome to the Facial Attendance System</h1>
+      <p class="mb-10 text-gray-700 text-lg">
+        Please use the navigation menu above to proceed with your tasks.
+      </p>
+      <a href="login.html" 
+        class="bg-teal-700 hover:bg-teal-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block text-center">
         Get Started
-      </button>
+      </a>
+
     </section>
   </main>
 
-  <footer class="bg-teal-800 text-white py-4 text-center text-sm mt-12">
+  <footer class="bg-teal-800 text-white py-5 text-center text-sm font-medium mt-16">
     &copy; 2025 Facial Attendance Prototype
   </footer>
 
