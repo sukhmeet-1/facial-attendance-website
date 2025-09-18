@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instructor Registration | Facial Attendance</title>
+</head>
+
+<body>
+  <header>
+    <h1>Instructor Registration</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="registration-form-title">
+      <h2 id="registration-form-title">Register as an Instructor</h2>
+      <form action="/register-instructor" method="POST" novalidate>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="instructor.email@example.com" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6" />
+
+        <label for="employer-id">Employer ID</label>
+        <input type="text" id="employer-id" name="employer_id" placeholder="Your employer ID" required pattern="[A-Za-z0-9\-]+" title="Alphanumeric characters and dashes only" />
+
+        <button type="submit">Register</button>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>
